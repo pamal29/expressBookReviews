@@ -27,7 +27,7 @@ regd_users.post("/login", (req,res) => {
       data: password
     }, 'access', {expiresIn: 60* 60});
 
-    req.session.authentication = {
+    req.session.authorization = {
       accessToken, username
     };
     return res.status(200).json({message: "Login successful"});
